@@ -65,27 +65,27 @@ meus_agentes = {}
 # --- MOLDE DE AGENTE 1: TAREFA ESPECÍFICA (Ex: Tradutor) ---
 # Descomente e personalize as linhas abaixo para criar seu primeiro agente.
 #
-# nome_agente_1 = "Tradutor Jurídico"
-# instrucao_agente_1 = """
-#     Você é um tradutor profissional com 20 anos de experiência na área jurídica.
-#     Sua única função é traduzir textos do inglês para o português brasileiro com
-#     extrema precisão terminológica. Não adicione nenhuma nota ou explicação,
-#     apenas o texto traduzido.
-# """
-# meus_agentes[nome_agente_1] = Agente(nome=nome_agente_1, system_instruction=instrucao_agente_1)
+nome_agente_1 = "Tradutor Jurídico"
+instrucao_agente_1 = """
+    Você é um tradutor profissional com 20 anos de experiência na área jurídica.
+    Sua única função é traduzir textos do inglês para o português brasileiro com
+    extrema precisão terminológica. Não adicione nenhuma nota ou explicação,
+    apenas o texto traduzido.
+"""
+meus_agentes[nome_agente_1] = Agente(nome=nome_agente_1, system_instruction=instrucao_agente_1)
 
 
 # --- MOLDE DE AGENTE 2: TAREFA CRIATIVA (Ex: Roteirista) ---
 # Descomente e personalize para criar um segundo agente.
 #
-# nome_agente_2 = "Gerador de Ideias para Negócios"
-# instrucao_agente_2 = """
-#     Você é um consultor de inovação e empreendedorismo.
-#     Com base em um tópico ou problema, seu objetivo é gerar 3 ideias de negócios
-#     inovadoras, incluindo um nome para a empresa, o público-alvo e o principal diferencial.
-#     Formate a resposta em tópicos.
-# """
-# meus_agentes[nome_agente_2] = Agente(nome=nome_agente_2, system_instruction=instrucao_agente_2)
+nome_agente_2 = "Gerador de Ideias para Negócios"
+instrucao_agente_2 = """
+     Você é um consultor de inovação e empreendedorismo.
+     Com base em um tópico ou problema, seu objetivo é gerar 3 ideias de negócios
+     inovadoras, incluindo um nome para a empresa, o público-alvo e o principal diferencial.
+     Formate a resposta em tópicos.
+ """
+meus_agentes[nome_agente_2] = Agente(nome=nome_agente_2, system_instruction=instrucao_agente_2)
 
 
 # --- ADICIONE QUANTOS AGENTES QUISER SEGUINDO OS MOLDES ACIMA ---
@@ -125,16 +125,16 @@ def main():
         # O Agente A faz algo, e o Agente B trabalha em cima do resultado de A.
         # Descomente as 4 linhas abaixo para usar este fluxo.
         #
-        # resultado_agente_A = meus_agentes["Gerador de Ideias para Negócios"].executar(tarefa=tarefa_inicial)
-        # print("\n--- Resultado do Agente A ---\n")
-        # print(formatar_texto(resultado_agente_A))
+        resultado_agente_A = meus_agentes["Gerador de Ideias para Negócios"].executar(tarefa=tarefa_inicial)
+        print("\n--- Resultado do Agente A ---\n")
+        print(formatar_texto(resultado_agente_A))
         #
-        # resultado_final = meus_agentes["Roteirista de Vídeo Curto"].executar(
-        #     tarefa="Crie um roteiro de vídeo para a primeira ideia de negócio.",
-        #     contexto=resultado_agente_A
-        # )
-        # print("\n--- Resultado do Agente B ---\n")
-        # print(formatar_texto(resultado_final))
+        resultado_final = meus_agentes["Roteirista de Vídeo Curto"].executar(
+            tarefa="Crie um roteiro de vídeo para a primeira ideia de negócio.",
+            contexto=resultado_agente_A
+        )
+        print("\n--- Resultado do Agente B ---\n")
+        print(formatar_texto(resultado_final))
         
         # Se nenhum fluxo for descomentado, o programa terminará aqui.
         print("✨ Fluxo de orquestração não definido. Personalize a Parte 4 do código para começar.")
