@@ -1,0 +1,11 @@
+# Arquivo de ambiente com chaves secretas
+.env
+
+# Pasta do ambiente virtual do Python
+venv/
+
+# Arquivos de cache do Python
+__pycache__/
+
+# Pasta de configurações do VS Code
+.vscode/
